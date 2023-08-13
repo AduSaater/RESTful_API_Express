@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/AduSaater/RESTful_API_Express/issues"
   },
-  "homepage": "https://github.com/AduSaater/RESTful_API_Express#readme"
+  "homepage": "https://github.com/AduSaater/RESTful_API_Express#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
