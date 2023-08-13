@@ -1,6 +1,18 @@
 const express = require('express');
 const app = express();
+courses = [
+    {id: 1, name:"Adu"}, {id:2, name:"Saater"}
+];
 app.get('/', (req, res)=>{
-res.send('Hello World');
+res.send('Hello World!!!');
 });
-app.listen(3000, ()=>console.log('Listening to 3000'));
+app.get('/api/courses', (req, res)=>{
+    res.send(courses);
+});
+app.get('/api/courses/:id', (req, res)=>{
+    const course = courses.find(c=>c.id===parseInt(req.params.id));
+    if(!course)res.status(404).send('The course with the given id does not exist');
+    res.send(course);
+});
+const port = process.env.PORT || 3000;
+app.listen(port, ()=>console.log(`Listening to port ${port}`));
